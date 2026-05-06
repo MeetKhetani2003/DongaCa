@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b3a5c;
+  --color-ink-deep: #07273f;
+  --color-brand: #1f8fcf;
+  --color-brand-soft: #6fb8df;
+  --color-accent: ##1e8fce;
+  --color-accent-soft: ##1e8fce80;
+  --color-bone: #fafaf7;
+  --color-bone-warm: #f1efe8;
+  --color-charcoal: #1a1a1a;
+  --color-mist: #e8e6e0;
+
+  --font-serif: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans:
+    var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+html,
+body {
+  background: #fafaf7;
+  color: #1a1a1a;
+}
+
+/* Subtle paper grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1efe8;
+}
+::-webkit-scrollbar-thumb {
+  background: #0b3a5c;
+  border: 2px solid #f1efe8;
+  border-radius: 999px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Slow spin */
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-slow-spin {
+  animation: slow-spin 22s linear infinite;
+}
+
+/* Headline serif rendering */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02", "liga", "dlig";
+  letter-spacing: -0.02em;
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(11, 58, 92, 0.18),
+    transparent
+  );
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s ease;
+}
+.link-underline:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
