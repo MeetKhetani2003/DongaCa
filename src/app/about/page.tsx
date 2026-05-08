@@ -63,8 +63,76 @@ export default function AboutPage() {
         intro="Donga & Co. was established in Ahmedabad with a dream in eyes, honesty in heart, hard work in hands and an action plan in mind. Two decades on, the principles have not changed."
       />
 
+      {/* Leadership Section */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5 relative">
+              <Reveal>
+                <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl bg-[#0B3A5C]/5">
+                  <img
+                    src="/OwnerSuiteImage.jpeg"
+                    alt="Muzamilkhan Donga"
+                    className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+              </Reveal>
+              {/* Decorative accent */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#1F8FCF]/10 -z-10 rounded-full blur-2xl" />
+            </div>
+
+            <div className="lg:col-span-6 lg:col-start-7">
+              <Reveal>
+                <span className="text-[11px] uppercase tracking-[0.28em] text-[#1F8FCF]">
+                  Leadership
+                </span>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <h2 className="mt-6 font-display text-4xl md:text-5xl text-[#0B3A5C] leading-tight">
+                  Muzamilkhan Donga
+                  <span className="block text-xl md:text-2xl text-[#1F8FCF] mt-2 font-sans font-medium tracking-wide">
+                    Founder & Managing Partner
+                  </span>
+                </h2>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <div className="mt-10 space-y-6 text-[17px] leading-[1.8] text-[#1A1A1A]/75">
+                  <p>
+                    With over two decades of experience in the fiscal landscape of Gujarat, 
+                    Muzamilkhan has built Donga & Co. on a foundation of absolute honesty 
+                    and quiet discipline. His vision was simple: to create a "Temple of Trust" 
+                    where businesses could find not just service, but strategic partnership.
+                  </p>
+                  <p>
+                    Under his leadership, the firm has evolved from a local practice into 
+                     a multi-city advisory, known for its inventive and cost-effective 
+                     solutions to complex taxation and auditing challenges.
+                  </p>
+                  <p className="font-display italic text-xl text-[#0B3A5C]">
+                    "We don't just count the numbers; we make the numbers count for your growth."
+                  </p>
+                </div>
+              </Reveal>
+              
+              <Reveal delay={0.3}>
+                <div className="mt-12 flex items-center gap-10 border-t border-[#0B3A5C]/10 pt-10">
+                  <div>
+                    <div className="text-2xl font-display text-[#0B3A5C]">20+</div>
+                    <div className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 mt-1">Years Experience</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-display text-[#0B3A5C]">Ahmedabad</div>
+                    <div className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 mt-1">Practice Base</div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Founder Letter */}
-      <section className="relative py-12 md:py-16">
+      <section className="relative py-12 md:py-16 bg-[#F1EFE8]/40">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <Reveal>

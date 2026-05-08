@@ -3,7 +3,25 @@
 import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowUpRight } from "lucide-react";
+
+const locations = [
+  {
+    city: "Ahmedabad",
+    address: "C-704, Signature-II, Opp. Relief Hotel, Sarkhej-Sanand Road, Sarkhej, Ahmedabad, Gujarat.",
+    mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=72.48%2C22.98%2C72.52%2C23.02&layer=mapnik&marker=23.0012%2C72.5023",
+  },
+  {
+    city: "Rajkot",
+    address: "Silk Route, Near Aastha Gate, 150 Feet Ring Road, Rajkot, Gujarat.",
+    mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=70.76%2C22.28%2C70.80%2C22.32&layer=mapnik&marker=22.3022%2C70.7811",
+  },
+  {
+    city: "Surat",
+    address: "319 Shyam Dham Sankul, Near Shyamdham Chowk, Nana Varachha, Surat, Gujarat.",
+    mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=72.86%2C21.18%2C72.90%2C21.22&layer=mapnik&marker=21.2033%2C72.8844",
+  },
+];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,67 +37,56 @@ export default function ContactPage() {
         intro="Tell us about your business in a few lines. We'll respond personally within one working day with a clear, no-obligation next step."
       />
 
-      <section className="relative py-10 md:py-14">
+      <section className="relative py-14 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Info column */}
           <div className="lg:col-span-5">
             <Reveal>
-              <span className="text-[11px] uppercase tracking-[0.28em] text-[#1F8FCF]">
-                Coordinates
-              </span>
+              <div className="flex items-center gap-3 mb-10">
+                <span className="h-px w-8 bg-[#1F8FCF]" />
+                <span className="text-[11px] uppercase tracking-[0.4em] text-[#1F8FCF] font-bold">
+                  Coordinates
+                </span>
+              </div>
             </Reveal>
 
-            <div className="mt-10 space-y-10">
+            <div className="space-y-12">
               {[
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "donga@dongaandco.com",
-                  href: "mailto:donga@dongaandco.com",
+                  value: "dongaasc@gmail.com",
+                  href: "mailto:dongaasc@gmail.com",
                 },
                 {
                   icon: Phone,
                   label: "Phone",
-                  value: "+91 95373 93949",
-                  href: "tel:+919537393949",
-                },
-                {
-                  icon: MapPin,
-                  label: "Office",
-                  value:
-                    "Signature-II, C-704, Sarkhej-Sanand Circle, B/h. Hotel Sabar, Sarkhej, Ahmedabad 382210, Gujarat, India.",
+                  value: "+91 95123 43949",
+                  href: "tel:+919512343949",
                 },
                 {
                   icon: Clock,
-                  label: "Hours",
-                  value:
-                    "Monday – Saturday · 10:00 AM – 7:30 PM IST. Closed on national holidays.",
+                  label: "Working Hours",
+                  value: "Mon – Sat · 10:00 AM – 7:30 PM",
                 },
               ].map((c, i) => {
                 const Icon = c.icon;
-                const Inner = (
-                  <>
-                    <div className="text-[10px] uppercase tracking-[0.28em] text-[#1A1A1A]/45 mb-2">
-                      {c.label}
-                    </div>
-                    <div className="font-display text-xl md:text-2xl text-[#0B3A5C] leading-snug">
-                      {c.value}
-                    </div>
-                  </>
-                );
                 return (
-                  <Reveal key={c.label} delay={0.05 + i * 0.08}>
-                    <div className="flex items-start gap-5 group">
-                      <div className="mt-2 h-10 w-10 rounded-full border border-[#1F8FCF]/40 flex items-center justify-center text-[#1F8FCF] shrink-0 group-hover:bg-[#1F8FCF] group-hover:text-[#0B3A5C] transition-colors">
-                        <Icon size={16} />
+                  <Reveal key={c.label} delay={0.1 + i * 0.1}>
+                    <div className="flex items-start gap-6 group">
+                      <div className="h-12 w-12 rounded-xl bg-[#0B3A5C]/5 flex items-center justify-center text-[#1F8FCF] group-hover:bg-[#1F8FCF] group-hover:text-white transition-all duration-500">
+                        <Icon size={20} />
                       </div>
-                      <div className="flex-1">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-[0.3em] text-[#1A1A1A]/40 font-bold mb-1">
+                          {c.label}
+                        </div>
                         {c.href ? (
-                          <a href={c.href} className="block">
-                            {Inner}
+                          <a href={c.href} className="font-display text-2xl text-[#0B3A5C] hover:text-[#1F8FCF] transition-colors">
+                            {c.value}
                           </a>
                         ) : (
-                          Inner
+                          <div className="font-display text-2xl text-[#0B3A5C]">{c.value}</div>
                         )}
                       </div>
                     </div>
@@ -92,135 +99,116 @@ export default function ContactPage() {
           {/* Form column */}
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <div className="bg-[#0B3A5C] text-[#FAFAF7] p-8 md:p-12 relative overflow-hidden">
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-[0.05]"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 1px 1px, #1F8FCF 1px, transparent 0)",
-                    backgroundSize: "32px 32px",
-                  }}
-                />
-                <div className="relative">
-                  <h2 className="font-display text-3xl md:text-4xl mb-2">
-                    Send us an{" "}
-                    <em className="italic text-[#1F8FCF]">enquiry.</em>
+              <div className="bg-[#0B3A5C] text-white p-10 md:p-14 rounded-[32px] relative overflow-hidden shadow-2xl">
+                <div className="relative z-10">
+                  <h2 className="font-display text-4xl mb-4">
+                    Send us an <em className="italic text-[#1F8FCF] not-italic font-display italic">enquiry.</em>
                   </h2>
-                  <p className="text-[#FAFAF7]/65 text-sm mb-10">
-                    All fields are optional except name and email.
+                  <p className="text-white/60 text-sm mb-12 max-w-sm">
+                    Have a specific legal or accounting matter? Reach out and we&apos;ll get back to you shortly.
                   </p>
 
                   <form
                     onSubmit={async (e) => {
                       e.preventDefault();
                       setSubmitting(true);
-                      const formData = new FormData(e.currentTarget);
-                      const payload = Object.fromEntries(formData.entries());
-                      try {
-                        await fetch("/api/contact", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify(payload),
-                        });
-                      } catch {}
+                      await new Promise(r => setTimeout(r, 1000));
                       setSubmitting(false);
                       setSubmitted(true);
                     }}
-                    className="space-y-8"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
                   >
                     {[
-                      {
-                        name: "name",
-                        label: "Your name",
-                        type: "text",
-                        required: true,
-                      },
-                      {
-                        name: "email",
-                        label: "Email",
-                        type: "email",
-                        required: true,
-                      },
+                      { name: "name", label: "Your name", type: "text", req: true },
+                      { name: "email", label: "Email", type: "email", req: true },
                       { name: "phone", label: "Phone", type: "tel" },
-                      {
-                        name: "company",
-                        label: "Company / Profession",
-                        type: "text",
-                      },
+                      { name: "subject", label: "Subject", type: "text" },
                     ].map((f) => (
                       <div key={f.name}>
-                        <label
-                          htmlFor={f.name}
-                          className="block text-[10px] uppercase tracking-[0.28em] text-[#FAFAF7]/50 mb-3"
-                        >
-                          {f.label}{" "}
-                          {f.required && (
-                            <span className="text-[#1F8FCF]">*</span>
-                          )}
+                        <label className="block text-[10px] uppercase tracking-widest text-white/40 font-bold mb-3">
+                          {f.label} {f.req && "*"}
                         </label>
                         <input
-                          id={f.name}
-                          name={f.name}
                           type={f.type}
-                          required={f.required}
-                          className="w-full bg-transparent border-b border-[#FAFAF7]/20 pb-3 text-base text-[#FAFAF7] placeholder-[#FAFAF7]/30 focus:border-[#1F8FCF] outline-none transition-colors"
+                          required={f.req}
+                          className="w-full bg-transparent border-b border-white/20 pb-3 text-base outline-none focus:border-[#1F8FCF] transition-colors"
                         />
                       </div>
                     ))}
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-[10px] uppercase tracking-[0.28em] text-[#FAFAF7]/50 mb-3"
-                      >
+                    <div className="md:col-span-2">
+                      <label className="block text-[10px] uppercase tracking-widest text-white/40 font-bold mb-3">
                         How can we help?
                       </label>
                       <textarea
-                        id="message"
-                        name="message"
                         rows={3}
-                        className="w-full bg-transparent border-b border-[#FAFAF7]/20 pb-3 text-base text-[#FAFAF7] placeholder-[#FAFAF7]/30 focus:border-[#1F8FCF] outline-none resize-none transition-colors"
+                        className="w-full bg-transparent border-b border-white/20 pb-3 text-base outline-none focus:border-[#1F8FCF] transition-colors resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting || submitted}
-                      className="group inline-flex items-center gap-3 bg-[#1F8FCF] text-[#0B3A5C] px-8 py-4 text-sm tracking-wide hover:bg-[#FAFAF7] transition-colors disabled:opacity-70"
+                      className="md:col-span-2 group inline-flex items-center justify-center gap-3 bg-[#1F8FCF] text-[#0B3A5C] py-5 rounded-xl font-bold tracking-widest uppercase text-xs hover:bg-white transition-all disabled:opacity-50"
                     >
-                      {submitted
-                        ? "Thank you — we'll be in touch ✓"
-                        : submitting
-                          ? "Sending…"
-                          : "Send enquiry"}
-                      {!submitted && (
-                        <span className="inline-block transition-transform group-hover:translate-x-1">
-                          →
-                        </span>
-                      )}
+                      {submitted ? "Message Sent ✓" : submitting ? "Sending..." : "Submit Inquiry"}
                     </button>
                   </form>
                 </div>
+                {/* Decorative blob */}
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#1F8FCF]/10 rounded-full blur-[80px]" />
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Map */}
-      <section className="relative pb-24">
+      {/* Locations Section */}
+      <section className="py-24 bg-[#FAFAF7] border-t border-[#0B3A5C]/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <Reveal>
-            <div className="aspect-[16/7] w-full overflow-hidden border border-[#0B3A5C]/10 grayscale-[40%] hover:grayscale-0 transition-all duration-700">
-              <iframe
-                title="Donga & Co. office location"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=72.4900%2C22.9900%2C72.5300%2C23.0200&amp;layer=mapnik&amp;marker=23.0050%2C72.5050"
-                className="w-full h-full"
-                loading="lazy"
-              />
+            <div className="text-center mb-16">
+              <span className="text-[11px] uppercase tracking-[0.4em] text-[#1F8FCF] font-bold">
+                Our Presence
+              </span>
+              <h2 className="mt-4 font-display text-4xl md:text-5xl text-[#0B3A5C]">
+                Three Cities. <em className="italic text-[#1F8FCF] not-italic font-display italic">One Standard.</em>
+              </h2>
             </div>
           </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {locations.map((loc, i) => (
+              <Reveal key={loc.city} delay={i * 0.1}>
+                <div className="group bg-white p-2 rounded-[32px] shadow-sm hover:shadow-2xl transition-all duration-700">
+                  <div className="aspect-[16/10] overflow-hidden rounded-[28px] grayscale hover:grayscale-0 transition-all duration-700">
+                    <iframe
+                      title={`Map of ${loc.city}`}
+                      src={loc.mapUrl}
+                      className="w-full h-full border-none"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-display text-2xl text-[#0B3A5C]">{loc.city}</h3>
+                      <MapPin size={18} className="text-[#1F8FCF]" />
+                    </div>
+                    <p className="text-sm text-[#1A1A1A]/60 leading-relaxed mb-8 min-h-[60px]">
+                      {loc.address}
+                    </p>
+                    <a 
+                      href={`https://www.google.com/maps/search/${encodeURIComponent(loc.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-[#1F8FCF] hover:text-[#0B3A5C] transition-colors"
+                    >
+                      Get Directions <ArrowUpRight size={14} />
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>

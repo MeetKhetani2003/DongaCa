@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Services — Donga & Co.",
   description:
-    "Eighteen service lines across accounting, taxation, audit, finance and company affairs.",
+    "Comprehensive service lines across accounting, taxation, audit, finance and specialized legal court matters.",
 };
 
 const groups = [
@@ -96,6 +96,39 @@ const groups = [
     ],
   },
   {
+    label: "Legal & Court Matters",
+    items: [
+      {
+        t: "Sales & Partnership Deeds",
+        d: "Expert drafting and registration of sales, partnership, and trust deeds with precise legal wording.",
+      },
+      {
+        t: "Affidavits & Agreements",
+        d: "Preparation of all types of legal affidavits and commercial agreements tailored to your requirements.",
+      },
+      {
+        t: "Rent & Banakhat",
+        d: "Specialized assistance for rent agreements and Banakhat (agreements to sell) for real estate.",
+      },
+      {
+        t: "Power of Attorney",
+        d: "Legal drafting for general and specific power of attorney (POA) requirements.",
+      },
+      {
+        t: "Wills & Adoptions",
+        d: "Sensitive and legally robust handling of will preparation and adoption documentation.",
+      },
+      {
+        t: "Marriage Registration",
+        d: "Complete end-to-end support for the legal registration of marriages and associated paperwork.",
+      },
+      {
+        t: "Court Matter Assistance",
+        d: "Professional guidance for all types of legal court matters, consent forms, and litigation support.",
+      },
+    ],
+  },
+  {
     label: "Company Affairs",
     items: [
       {
@@ -105,10 +138,6 @@ const groups = [
       {
         t: "Professional Tax & PT",
         d: "Professional Tax registration and ongoing compliance.",
-      },
-      {
-        t: "Partnership Deeds",
-        d: "Drafting and registration of partnership deeds and amendments.",
       },
       {
         t: "New Project Consultation",
@@ -125,9 +154,9 @@ export default function ServicesPage() {
       <PageHeader
         crumb="Services"
         eyebrow="What we do"
-        title="Eighteen service lines."
+        title="Comprehensive service lines."
         emphasis="One accountable team."
-        intro="From the first journal entry to the final assessment hearing, we cover every step. Here's the full catalog — organised the way our practice is run."
+        intro="From accounting and taxation to specialized legal court matters, we cover every step. Here's the full catalog — organised for your ease of navigation."
       />
 
       {groups.map((g, gi) => (

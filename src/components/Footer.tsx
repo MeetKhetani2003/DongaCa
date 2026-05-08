@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1">
           <Logo variant="light" />
           <p className="mt-4 text-sm leading-[1.7] max-w-xs">
-            A chartered accountancy practice in Ahmedabad. Available Timely
-            Service.
+            A premium chartered accountancy and legal advisory practice serving 
+            Ahmedabad, Rajkot & Surat. Inventive solutions for complex fiscal challenges.
           </p>
         </div>
 
@@ -74,18 +74,20 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li>
               <a
-                href="mailto:donga@dongaandco.com"
+                href="mailto:dongaasc@gmail.com"
                 className="hover:text-[#1F8FCF]"
               >
-                donga@dongaandco.com
+                dongaasc@gmail.com
               </a>
             </li>
             <li>
-              <a href="tel:+919537393949" className="hover:text-[#1F8FCF]">
-                +91 95373 93949
+              <a href="tel:+919512343949" className="hover:text-[#1F8FCF]">
+                +91 95123 43949
               </a>
             </li>
-            <li>Sarkhej, Ahmedabad</li>
+            <li className="text-[12px] leading-tight">Ahmedabad · Sarkhej</li>
+            <li className="text-[12px] leading-tight">Rajkot · 150ft Ring Road</li>
+            <li className="text-[12px] leading-tight">Surat · Nana Varachha</li>
           </ul>
         </div>
       </div>

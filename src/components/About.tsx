@@ -29,18 +29,18 @@ export default function About() {
         <div className="lg:col-span-6 lg:col-start-7 space-y-8">
           <Reveal delay={0.2}>
             <p className="text-[17px] leading-[1.7] text-[#1A1A1A]/75">
-              Donga & Co. is a chartered accountancy practice rooted in
-              Ahmedabad — established with honesty in heart, discipline in hands
-              and a clear plan of action. We believe service is not merely a
-              deliverable, but a relationship we earn, every quarter.
+              Led by **CA Jay H Rajait** and **Muzamilkhan Donga**, our practice is 
+              dedicated to providing inventive and cost-effective solutions to our 
+              clients' complex fiscal challenges. We believe in building trust 
+              through transparency and delivering results with unwavering discipline.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <p className="text-[17px] leading-[1.7] text-[#1A1A1A]/75">
-              From manufacturers and exporters to doctors, designers, brokers
-              and creators — we serve a deliberately diverse roster of clients
-              who share one trait: the desire to grow without worrying about the
-              books.
+              Our mission is to add value to our clients' businesses by providing 
+              proactive advice and ensuring total regulatory compliance. From NGO 
+              registrations to specialized industry licenses, we handle the 
+              intricacies so you can focus on growth.
             </p>
           </Reveal>
 
