@@ -35,6 +35,7 @@ export default function ContactPage() {
         title="Let's talk"
         emphasis="numbers."
         intro="Tell us about your business in a few lines. We'll respond personally within one working day with a clear, no-obligation next step."
+        image="/contact-hero.png"
       />
 
       <section className="relative py-14 md:py-20 bg-white">

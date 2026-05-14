@@ -179,6 +179,7 @@ export default function ResourcesPage() {
         title="Documents and dates,"
         emphasis="organised."
         intro="Two reference sets we share with every client — a checklist of what to bring, and a calendar of what's coming up."
+        image="/resources-hero.png"
       />
 
       {/* Tabs */}

@@ -92,6 +92,7 @@ export default function ConsultancyPage() {
         title="Whatever's on"
         emphasis="your mind."
         intro="The questions our clients ask most often — across personal finance and business decisions. If your question isn't here, that's exactly the conversation we'd like to have."
+        image="/consultancy-hero.png"
       />
 
       <section className="relative py-10 md:py-14">

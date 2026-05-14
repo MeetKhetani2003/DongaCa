@@ -157,6 +157,7 @@ export default function ServicesPage() {
         title="Comprehensive service lines."
         emphasis="One accountable team."
         intro="From accounting and taxation to specialized legal court matters, we cover every step. Here's the full catalog — organised for your ease of navigation."
+        image="/services-hero.png"
       />
 
       {groups.map((g, gi) => (

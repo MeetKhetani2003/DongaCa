@@ -61,6 +61,7 @@ export default function AboutPage() {
         title="A practice built on"
         emphasis="quiet discipline."
         intro="Donga & Co. was established in Ahmedabad with a dream in eyes, honesty in heart, hard work in hands and an action plan in mind. Two decades on, the principles have not changed."
+        image="/about-hero.png"
       />
 
       {/* Leadership Section */}
