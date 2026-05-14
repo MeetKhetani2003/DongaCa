@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import SpecializedServices from "@/components/SpecializedServices";
+import AgricultureSection from "@/components/AgricultureSection";
 import Process from "@/components/Process";
 import Quote from "@/components/Quote";
 import CTA from "@/components/CTA";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <About />
       <Services />
       <SpecializedServices />
+      <AgricultureSection />
       <Process />
       <Quote />
       <CTA />
