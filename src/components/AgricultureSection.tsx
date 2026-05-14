@@ -50,7 +50,7 @@ export default function AgricultureSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Content Side */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1 lg:order-1">
             <Reveal>
               <div className="flex items-center gap-4 mb-8">
                 <span className="h-[2px] w-12 bg-[#1F8FCF]" />
@@ -119,7 +119,7 @@ export default function AgricultureSection() {
           </div>
 
           {/* Video Side */}
-          <div className="order-1 lg:order-2 relative group">
+          <div className="order-2 lg:order-2 relative group">
             <Reveal delay={0.4}>
               <div className="relative aspect-[9/16] max-w-[400px] mx-auto rounded-[40px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(11,58,92,0.3)] border-8 border-white bg-[#0B3A5C]">
                 <video
