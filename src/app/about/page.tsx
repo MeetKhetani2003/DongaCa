@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl bg-[#0B3A5C]/5">
                   <img
                     src="/OwnerSuiteImage.jpeg"
-                    alt="Muzamilkhan Donga"
+                    alt="Madhusudan Donga"
                     className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="mt-6 font-display text-4xl md:text-5xl text-[#0B3A5C] leading-tight">
-                  Muzamilkhan Donga
+                  Madhusudan Donga
                   <span className="block text-xl md:text-2xl text-[#1F8FCF] mt-2 font-sans font-medium tracking-wide">
                     Founder & Managing Partner
                   </span>
@@ -99,22 +99,22 @@ export default function AboutPage() {
               <Reveal delay={0.2}>
                 <div className="mt-10 space-y-6 text-[17px] leading-[1.8] text-[#1A1A1A]/75">
                   <p>
-                    With over two decades of experience in the fiscal landscape of Gujarat, 
-                    Muzamilkhan has built Donga & Co. on a foundation of absolute honesty 
-                    and quiet discipline. His vision was simple: to create a "Temple of Trust" 
+                    With over two decades of experience in the fiscal landscape of Gujarat,
+                    Madhusudan Donga has built Donga & Co. on a foundation of absolute honesty
+                    and quiet discipline. His vision was simple: to create a "Temple of Trust"
                     where businesses could find not just service, but strategic partnership.
                   </p>
                   <p>
-                    Under his leadership, the firm has evolved from a local practice into 
-                     a multi-city advisory, known for its inventive and cost-effective 
-                     solutions to complex taxation and auditing challenges.
+                    Under his leadership, the firm has evolved from a local practice into
+                    a multi-city advisory, known for its inventive and cost-effective
+                    solutions to complex taxation and auditing challenges.
                   </p>
                   <p className="font-display italic text-xl text-[#0B3A5C]">
                     "We don't just count the numbers; we make the numbers count for your growth."
                   </p>
                 </div>
               </Reveal>
-              
+
               <Reveal delay={0.3}>
                 <div className="mt-12 flex items-center gap-10 border-t border-[#0B3A5C]/10 pt-10">
                   <div>

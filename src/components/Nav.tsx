@@ -30,11 +30,10 @@ export default function Nav() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled || open
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled || open
           ? "bg-[#FAFAF7]/95 backdrop-blur-xl border-b border-[#0B3A5C]/10 shadow-[0_1px_20px_-10px_rgba(11,58,92,0.25)]"
           : "bg-[#FAFAF7]/80 backdrop-blur-md border-b border-[#0B3A5C]/8"
-      }`}
+        }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between h-20">
         <Link href="/" className="group">
@@ -48,17 +47,15 @@ export default function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`text-[12.5px] font-medium tracking-[0.08em] uppercase transition-colors relative group ${
-                  active
+                className={`text-[12.5px] font-medium tracking-[0.08em] uppercase transition-colors relative group ${active
                     ? "text-[#1F8FCF]"
                     : "text-[#0B3A5C] hover:text-[#1F8FCF]"
-                }`}
+                  }`}
               >
                 {l.label}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-px bg-[#1F8FCF] transition-all duration-300 ${
-                    active ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute -bottom-1.5 left-0 h-px bg-[#1F8FCF] transition-all duration-300 ${active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 />
               </Link>
             );
