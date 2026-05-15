@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#07273F] text-[#FAFAF7]/70 border-t border-[#FAFAF7]/10">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2 md:col-span-1">
-          <Logo className="bg-white rounded-md border border-blue-200 max-w-fit px-4 md:w-full" />
+          <Logo className="bg-white rounded-md border border-blue-200 max-w-fit px-4 py-2 md:w-full" />
           <p className="mt-4 text-sm leading-[1.7] max-w-xs">
             A premium chartered accountancy and legal advisory practice serving
             Ahmedabad, Rajkot & Surat. Inventive solutions for complex fiscal challenges.
