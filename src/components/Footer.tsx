@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1">
           <Logo variant="light" />
           <p className="mt-4 text-sm leading-[1.7] max-w-xs">
-            A premium chartered accountancy and legal advisory practice serving 
+            A premium chartered accountancy and legal advisory practice serving
             Ahmedabad, Rajkot & Surat. Inventive solutions for complex fiscal challenges.
           </p>
         </div>

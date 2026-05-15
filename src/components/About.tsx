@@ -29,17 +29,17 @@ export default function About() {
         <div className="lg:col-span-6 lg:col-start-7 space-y-8">
           <Reveal delay={0.2}>
             <p className="text-[17px] leading-[1.7] text-[#1A1A1A]/75">
-              Led by **CA Jay H Rajait** and **Muzamilkhan Donga**, our practice is 
-              dedicated to providing inventive and cost-effective solutions to our 
-              clients' complex fiscal challenges. We believe in building trust 
+              Led by **CA Jay H Rajait** and **Madhusudan Donga**, our practice is
+              dedicated to providing inventive and cost-effective solutions to our
+              clients' complex fiscal challenges. We believe in building trust
               through transparency and delivering results with unwavering discipline.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <p className="text-[17px] leading-[1.7] text-[#1A1A1A]/75">
-              Our mission is to add value to our clients' businesses by providing 
-              proactive advice and ensuring total regulatory compliance. From NGO 
-              registrations to specialized industry licenses, we handle the 
+              Our mission is to add value to our clients' businesses by providing
+              proactive advice and ensuring total regulatory compliance. From NGO
+              registrations to specialized industry licenses, we handle the
               intricacies so you can focus on growth.
             </p>
           </Reveal>
