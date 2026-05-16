@@ -1,17 +1,14 @@
 import { NextResponse } from "next/server";
-import { db } from "@/db";
-import { enquiries } from "@/db/schema";
-
-export const runtime = "nodejs";
+import dbConnect from "@/lib/mongodb";
+import Enquiry from "@/models/Enquiry";
+import { sendInquiryEmail } from "@/lib/email";
 
 export async function POST(req: Request) {
   try {
+    await dbConnect();
     const body = await req.json();
-    const name = String(body?.name ?? "").trim();
-    const email = String(body?.email ?? "").trim();
-    const phone = body?.phone ? String(body.phone).trim() : null;
-    const company = body?.company ? String(body.company).trim() : null;
-    const message = body?.message ? String(body.message).trim() : null;
+    
+    const { name, email, phone, company, subject, message } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -20,15 +17,23 @@ export async function POST(req: Request) {
       );
     }
 
-    await db.insert(enquiries).values({
+    const enquiry = await Enquiry.create({
       name,
       email,
       phone,
       company,
+      subject,
       message,
     });
 
-    return NextResponse.json({ ok: true });
+    try {
+      await sendInquiryEmail({ name, email, phone, company, subject, message });
+    } catch (mailErr) {
+      console.error("Email notification failed", mailErr);
+      // We don't fail the request if email fails, as the inquiry is saved
+    }
+
+    return NextResponse.json({ ok: true, data: enquiry });
   } catch (err) {
     console.error("contact api error", err);
     return NextResponse.json(

@@ -113,9 +113,35 @@ export default function ContactPage() {
                     onSubmit={async (e) => {
                       e.preventDefault();
                       setSubmitting(true);
-                      await new Promise(r => setTimeout(r, 1000));
-                      setSubmitting(false);
-                      setSubmitted(true);
+                      
+                      const formData = new FormData(e.currentTarget);
+                      const data = {
+                        name: formData.get("name"),
+                        email: formData.get("email"),
+                        phone: formData.get("phone"),
+                        company: formData.get("company"),
+                        subject: formData.get("subject"),
+                        message: formData.get("message"),
+                      };
+
+                      try {
+                        const res = await fetch("/api/contact", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(data),
+                        });
+                        
+                        if (res.ok) {
+                          setSubmitted(true);
+                        } else {
+                          alert("Failed to send inquiry. Please try again.");
+                        }
+                      } catch (err) {
+                        console.error("Submission error", err);
+                        alert("An error occurred. Please try again.");
+                      } finally {
+                        setSubmitting(false);
+                      }
                     }}
                     className="grid grid-cols-1 md:grid-cols-2 gap-8"
                   >
@@ -123,6 +149,7 @@ export default function ContactPage() {
                       { name: "name", label: "Your name", type: "text", req: true },
                       { name: "email", label: "Email", type: "email", req: true },
                       { name: "phone", label: "Phone", type: "tel" },
+                      { name: "company", label: "Company", type: "text" },
                       { name: "subject", label: "Subject", type: "text" },
                     ].map((f) => (
                       <div key={f.name}>
@@ -130,6 +157,7 @@ export default function ContactPage() {
                           {f.label} {f.req && "*"}
                         </label>
                         <input
+                          name={f.name}
                           type={f.type}
                           required={f.req}
                           className="w-full bg-transparent border-b border-white/20 pb-3 text-base outline-none focus:border-[#1F8FCF] transition-colors"
@@ -141,6 +169,7 @@ export default function ContactPage() {
                         How can we help?
                       </label>
                       <textarea
+                        name="message"
                         rows={3}
                         className="w-full bg-transparent border-b border-white/20 pb-3 text-base outline-none focus:border-[#1F8FCF] transition-colors resize-none"
                       />
