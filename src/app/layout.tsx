@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Donga & Co. — Accounting, Taxation & Systems",
   description:
     "A chartered accountancy firm in Ahmedabad. You focus on growing your business — we take care of the numbers, the filings, and the deadlines.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
